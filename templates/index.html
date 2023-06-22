@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask app 
+        Emotion Detection 
+        Sentiment Analysis
+        Body Movement Analysis
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36353a;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-form input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        .upload-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Application :
+            Emotion Detection
+            Sentiment Analysis
+            Body movement Analysis
+        </h1>
+
+        <form method="post" action="/" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <select name="operation">
+                <option value="emotion">Emotion Analysis (Image)</option>
+                <option value="sentiment">Sentiment Analysis (Text)</option>
+            </select>
+            <input type="submit" value="Get Started">
+        </form>
+        
+    </div>
+</body>
+</html>
+
+

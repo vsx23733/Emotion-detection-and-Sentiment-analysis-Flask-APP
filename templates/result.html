@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Detection and Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36353a;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5dcae;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        video {
+            width: 640px;
+            height: 480px;
+            margin-top: 20px;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .filename {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .text {
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .result-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .download-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pose-data {
+            margin-bottom: 20px;
+        }
+
+        .result-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if filename %}
+            <h2 class="filename">Filename: {{ filename }}</h2>
+        {% endif %}
+
+        <div class="result">
+            {% if emotion %}
+            <p2>Emotion Analysis Result</p2>
+            <div class="result-item">
+                <img src="{{ url_for('static', filename='emotion.png') }}" alt="Emotion">
+                <div>
+                    <p><strong>File:</strong> {{ filename }}</p>
+                    <p><strong>Emotion:</strong> {{ emotion }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if sentiment %}
+            <p2>Sentiment Analysis Result</p2>
+            <div class="result-item">
+                <img src="{{ url_for('static', filename='sentiment.png') }}" alt="Sentiment">
+                <div>
+                    <p><strong>File:</strong> {{ filename }}</p>
+                    <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+                </div>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
